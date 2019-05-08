@@ -1,0 +1,35 @@
+<div class="container">
+  <h2>Register</h2>
+
+  <form>
+    <div class="form-group row">
+      <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
+      <div class="col-sm-4">
+        <input type="email" class="form-control" id="inputUsername" placeholder="Username">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+      <div class="col-sm-4">
+        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-4">
+        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputEmail" class="col-sm-2 col-form-label">Country</label>
+      <div class="col-sm-4">
+        <select id="country-choice" class="form-control">
+          {{#each countries}}
+          {{> countries/country-block}}
+          {{/each}}
+        </select>
+      </div>
+    </div>
+    <button type="button" class="btn btn-outline-dark" id="register-submit">SUBMIT</button>
+  </form>
+</div>
