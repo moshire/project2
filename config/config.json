@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "exampledb",
+    "database": "sequelize_passport",
     "host": "localhost",
     "dialect": "mysql"
   },
