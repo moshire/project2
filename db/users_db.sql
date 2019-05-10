@@ -1,0 +1,1 @@
+SELECT * FROM sequelize_passport.users;
