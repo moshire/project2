@@ -23,13 +23,8 @@ app.use(passport.session()); // persistent login sessions
 app.use(express.static("public"));
 
 // Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
-);
-app.set("view engine", "handlebars");
+// app.engine("handlebars", exphbs({}));
+// app.set("view engine", "handlebars");
 
 // Routes
 require("./routes/apiRoutes")(app);
@@ -42,6 +37,7 @@ app.set("views", "./views");
 app.engine(
   "hbs",
   exphbs({
+    defaultLayout: "main",
     extname: ".hbs"
   })
 );
