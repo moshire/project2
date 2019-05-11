@@ -1,6 +1,5 @@
-
 var Story = require("../models/story");
-
+//var Comment = require("../models/comment")
 
 // Routes
 // =============================================================
@@ -29,7 +28,6 @@ module.exports = function(app) {
     // Take the request...
     var story = req.body;
 
-    
     var routeName = story.name.replace(/\s+/g, "").toLowerCase();
 
     // Then add the story to the database using sequelize
@@ -37,8 +35,7 @@ module.exports = function(app) {
       routeName: routeName,
       name: story.name,
       title: story.title,
-      summary: story.summary,
-     
+      summary: story.summary
     });
 
     res.status(204).end();

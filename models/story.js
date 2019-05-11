@@ -9,7 +9,7 @@ module.exports = function(sequelize, Sequelize) {
       // the story's title (a string)
       title: Sequelize.STRING,
       // the story's text (text)
-      story: Sequelize.TEXT
+      Story: Sequelize.TEXT
     },
     {
       // disable the modification of tablenames; By default, sequelize will automatically
@@ -18,5 +18,6 @@ module.exports = function(sequelize, Sequelize) {
       freezeTableName: true
     }
   );
+
   return Story;
 };
