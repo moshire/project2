@@ -17,5 +17,11 @@ module.exports = function(sequelize, Sequelize) {
       onDelete: "cascade"
     });
   };
+
+  Rating.associate = function(models) {
+    Rating.belongsTo(models.story, {
+      onDelete: "cascade"
+    });
+  };
   return Rating;
 };

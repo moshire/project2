@@ -18,5 +18,10 @@ module.exports = function(sequelize, Sequelize) {
       freezeTableName: true
     }
   );
+
+  Story.associate = function(models) {
+    Story.hasMany(models.rating);
+  };
+
   return Story;
 };
