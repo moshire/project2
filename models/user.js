@@ -53,5 +53,9 @@ module.exports = function(sequelize, Sequelize) {
     }
   });
 
+  User.associate = function(models) {
+    User.hasMany(models.rating);
+  };
+
   return User;
 };
