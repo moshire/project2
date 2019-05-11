@@ -8,8 +8,8 @@ module.exports = function(sequelize, Sequelize) {
       name: Sequelize.STRING,
       // the story's title (a string)
       title: Sequelize.STRING,
-      // the story's summary (a string)
-      story: Sequelize.STRING
+      // the story's text (text)
+      story: Sequelize.TEXT
     },
     {
       // disable the modification of tablenames; By default, sequelize will automatically
