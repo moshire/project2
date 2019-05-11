@@ -1,5 +1,5 @@
 module.exports = function(sequelize, Sequelize) {
-  var story = sequelize.define(
+  var Story = sequelize.define(
     "story",
     {
       // the routeName gets saved as a string
@@ -18,5 +18,5 @@ module.exports = function(sequelize, Sequelize) {
       freezeTableName: true
     }
   );
-  return story;
+  return Story;
 };
