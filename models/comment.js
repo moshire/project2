@@ -17,5 +17,10 @@ module.exports = function(sequelize, Sequelize) {
       onDelete: "cascade"
     });
   };
+  Comment.associate = function(models) {
+    Comment.belongsTo(models.user, {
+      onDelete: "cascade"
+    });
+  };
   return Comment;
 };
