@@ -10,7 +10,7 @@ $.get("/api", function(data) {
     // add a class to this div: 'well'
     wellSection.addClass("well");
     // add an id to the well to mark which well it is
-    wellSection.attr("id", "story-well-" + i);
+    wellSection.attr("id", "story-well-" + data[i].id);
     // append the well to the well section
     $("#well-section").append(wellSection);
 
@@ -19,6 +19,6 @@ $.get("/api", function(data) {
     // the title an h3,
     $("#story-well-" + i).append("<h3>Title: " + data[i].title + "</h4>");
     // the summary an h3,
-    $("#story-well-" + i).append("<h3>Summary: " + data[i].summary + "</h4>");
+    $("#story-well-" + i).append("<h3>Summary: " + data[i].story + "</h4>");
   }
 });
