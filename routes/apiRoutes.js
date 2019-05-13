@@ -1,7 +1,5 @@
-
 var models = require("../models/");
 var Story = models.story;
-
 
 // Routes
 // =============================================================
@@ -30,16 +28,14 @@ module.exports = function(app) {
     // Take the request...
     var story = req.body;
 
-    
-    var routeName = story.name.replace(/\s+/g, "").toLowerCase();
+    var routeName = story.title.replace(/\s+/g, "").toLowerCase();
 
     // Then add the story to the database using sequelize
     Story.create({
       routeName: routeName,
-      name: story.name,
+
       title: story.title,
       story: story.story
-     
     });
 
     res.status(204).end();
