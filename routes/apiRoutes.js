@@ -1,5 +1,6 @@
 
-var Story = require("../models/story");
+var models = require("../models/");
+var Story = models.story;
 
 
 // Routes
@@ -37,7 +38,7 @@ module.exports = function(app) {
       routeName: routeName,
       name: story.name,
       title: story.title,
-      summary: story.summary,
+      story: story.story
      
     });
 

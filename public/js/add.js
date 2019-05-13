@@ -8,6 +8,8 @@ $("#add-btn").on("click", function(event) {
   // make a newStory obj
   var newStory = {
     // name from name input
+    routeName: "n/a",
+
     name: $("#name")
       .val()
       .trim(),
@@ -16,7 +18,7 @@ $("#add-btn").on("click", function(event) {
       .val()
       .trim(),
     // age from summary  input
-    summary: $("#summary")
+    story: $("#story")
       .val()
       .trim()
   };
@@ -34,5 +36,5 @@ $("#add-btn").on("click", function(event) {
   // empty each input box by replacing the value with an empty string
   $("#name").val("");
   $("#title").val("");
-  $("#summary").val("");
+  $("#story").val("");
 });
