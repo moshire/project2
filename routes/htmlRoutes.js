@@ -2,32 +2,48 @@
 // html-routes.js - this file offers a set of routes for sending users to the various html pages
 // *********************************************************************************
 
-// Dependencies
-// =============================================================
-var path = require("path");
+var authController = require("../controllers/authcontroller.js");
 
+module.exports = function(app, passport) {
+  app.get("/signup", authController.signup);
 
-// Routes
-// =============================================================
-module.exports = function(app) {
+  app.get("/", authController.signin);
 
-  // Each of the below routes just handles the HTML page that the user gets sent to.
+  app.get("/signin", authController.signin);
 
-  // index route loads view.html
-  app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/view.html"));
-  });
+  app.get("/view", isLoggedIn, authController.view)
 
-  // add route loads the add.html page,
-  // where users can enter new stories to the db
-  app.get("/add", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/add.html"));
-  });
+  app.get("/add", isLoggedIn, authController.add);
 
-  // all route loads the all.html page,
-  // where all characters in the db are displayed
-  app.get("/all", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/all.html"));
-  });
+  app.get("/all", isLoggedIn, authController.all);
 
+  app.get("/dashboard", isLoggedIn, authController.dashboard);
+
+  app.get("/logout", authController.logout);
+
+  app.post(
+    "/signup",
+    passport.authenticate("local-signup", {
+      successRedirect: "/view",
+
+      failureRedirect: "/signup"
+    })
+  );
+
+  app.post(
+    "/signin",
+    passport.authenticate("local-signin", {
+      successRedirect: "/view",
+
+      failureRedirect: "/signin"
+    })
+  );
+
+  function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+      return next();
+    }
+
+    res.redirect("/signin");
+  }
 };
