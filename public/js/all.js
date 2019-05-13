@@ -14,11 +14,9 @@ $.get("/api", function(data) {
     // append the well to the well section
     $("#well-section").append(wellSection);
 
-    // make the name an h2,
-    $("#story-well-" + i).append("<h2>" + data[i].name + "</h2>");
     // the title an h3,
     $("#story-well-" + i).append("<h3>Title: " + data[i].title + "</h4>");
     // the summary an h3,
-    $("#story-well-" + i).append("<h3>Summary: " + data[i].story + "</h4>");
+    $("#story-well-" + i).append("<h3>Story: " + data[i].story + "</h4>");
   }
 });

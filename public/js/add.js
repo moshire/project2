@@ -10,9 +10,6 @@ $("#add-btn").on("click", function(event) {
     // name from name input
     routeName: "n/a",
 
-    name: $("#name")
-      .val()
-      .trim(),
     // role from title input
     title: $("#title")
       .val()
@@ -34,7 +31,7 @@ $("#add-btn").on("click", function(event) {
     });
 
   // empty each input box by replacing the value with an empty string
-  $("#name").val("");
+
   $("#title").val("");
   $("#story").val("");
 });
