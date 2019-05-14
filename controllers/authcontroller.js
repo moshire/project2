@@ -36,10 +36,15 @@ exports.all = function(req, res) {
     var hbsObject = {
       story: data
     };
-    console.log(hbsObject.story[0].user.username);
-    console.log(hbsObject.story[0].story);
     res.render("all", hbsObject);
   });
+};
+
+exports.comment = function(req, res) {
+  var hbsObject = {
+    story: req.body
+  };
+  res.render("comment", req.body);
 };
 
 exports.logout = function(req, res) {

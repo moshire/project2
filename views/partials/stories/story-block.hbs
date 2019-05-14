@@ -1,9 +1,11 @@
 
 <li>
 
-<div class="well" data-story-id="{{id}}" data-user-id="{{userId}}">
+<div class="select-story" data-story-id="{{id}}" data-user-id="{{userId}}" data-overall-rating="{{overallRating}}" 
+data-first-name="{{user.firstName}}" data-last-name="{{user.lastName}}" data-username="{{user.username}}" data-story="{{story}}">
 
-  <h2>{{title}}</h2>
+  <h2>{{title}}</h2>    
+  <p>(Rating: {{overallRating}})</p>
   <h5>By: {{user.firstName}} {{user.lastName}}   ({{user.username}})</h5>
   <p>Summary: {{story}}</p>
 

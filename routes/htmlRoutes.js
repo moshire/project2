@@ -11,7 +11,7 @@ module.exports = function(app, passport) {
 
   app.get("/signin", authController.signin);
 
-  app.get("/view", isLoggedIn, authController.view)
+  app.get("/view", isLoggedIn, authController.view);
 
   app.get("/add", isLoggedIn, authController.add);
 
@@ -20,6 +20,8 @@ module.exports = function(app, passport) {
   app.get("/dashboard", isLoggedIn, authController.dashboard);
 
   app.get("/logout", authController.logout);
+
+  app.get("/comment", authController.comment);
 
   app.post(
     "/signup",

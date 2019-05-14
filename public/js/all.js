@@ -20,3 +20,28 @@
 //     $("#story-well-" + i).append("<h3>Story: " + data[i].story + "</h4>");
 //   }
 // });
+
+//When the user selects a story on the story page it takes them to the comments page.
+//This code grabs all of the values about the story which are stored in html data tags
+//and passes these tabs to handlebars (via api call).
+$(document).ready(
+  $(".select-story").on("click", function(event) {
+    event.preventDefault();
+
+    var selectedStory = {
+      id: $(this).data("story-id"),
+      userId: $(this).data("user-id"),
+      overallRating: $(this).data("overall-rating"),
+      user: {
+        firstName: $(this).data("first-name"),
+        lastName: $(this).data("last-name"),
+        username: $(this).data("username")
+      },
+      story: $(this).data("story")
+    };
+
+    $.get("/comment", selectedStory).then(function(data) {
+      console.log(data);
+    });
+  })
+);
