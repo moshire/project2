@@ -22,5 +22,10 @@ module.exports = function(sequelize, Sequelize) {
     Story.hasMany(models.rating);
   };
 
+  Story.associate = function(models) {
+    Story.belongsTo(models.user, {
+      onDelete: "cascade"
+    });
+  };
   return Story;
 };

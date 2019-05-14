@@ -1,13 +1,11 @@
 
 <li>
 
-<div class="well" data-id="{{id}}">
+<div class="well" data-story-id="{{id}}" data-user-id="{{userId}}">
 
-  <h2>{{name}}</h2>
-
-  <h4>Title: {{title}}</h4>
-
-  <h3>Summary: {{story}}</h3>
+  <h2>{{title}}</h2>
+  <h5>By: {{user.firstName}} {{user.lastName}}   ({{user.username}})</h5>
+  <p>Summary: {{story}}</p>
 
   </div>
 </li>

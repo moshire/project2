@@ -1,5 +1,6 @@
 var models = require("../models/");
 var Story = models.story;
+var Users = models.user;
 
 var exports = (module.exports = {});
 
@@ -24,11 +25,19 @@ exports.add = function(req, res) {
 };
 
 exports.all = function(req, res) {
-  Story.findAll({}).then(function(data) {
+  Story.findAll({
+    include: [
+      {
+        model: Users,
+        required: true
+      }
+    ]
+  }).then(function(data) {
     var hbsObject = {
       story: data
     };
-    console.log(hbsObject);
+    console.log(hbsObject.story[0].user.username);
+    console.log(hbsObject.story[0].story);
     res.render("all", hbsObject);
   });
 };
