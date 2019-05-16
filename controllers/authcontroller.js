@@ -1,7 +1,31 @@
 var models = require("../models/");
 var Story = models.story;
+var Users = models.user;
 
 var exports = (module.exports = {});
+
+exports.comment = function(req, res) {
+  console.log("HEY THERE!!!! " + req.params.storyId);
+  var storyId = req.params.storyId;
+
+  Story.findAll({
+    where: {
+      id: storyId
+    },
+    include: [
+      {
+        model: Users,
+        required: true
+      }
+    ]
+  }).then(function(data) {
+    var hbsObject = {
+      story: data
+    };
+    console.log(data);
+    res.render("comment", hbsObject);
+  });
+};
 
 exports.signup = function(req, res) {
   res.render("signup");
@@ -23,12 +47,34 @@ exports.add = function(req, res) {
   res.render("add");
 };
 
+// exports.comment = function(req, res) {
+//   Story.findAll({
+//     include: [
+//       {
+//         model: Users,
+//         required: true
+//       }
+//     ]
+//   }).then(function(data) {
+//     var hbsObject = {
+//       story: data
+//     };
+//     res.render("comment", hbsObject);
+//   });
+// };
+
 exports.all = function(req, res) {
-  Story.findAll({}).then(function(data) {
+  Story.findAll({
+    include: [
+      {
+        model: Users,
+        required: true
+      }
+    ]
+  }).then(function(data) {
     var hbsObject = {
       story: data
     };
-    console.log(hbsObject);
     res.render("all", hbsObject);
   });
 };

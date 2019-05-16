@@ -13,14 +13,10 @@ module.exports = function(sequelize, Sequelize) {
 
   //Foreign key creation
   Comment.associate = function(models) {
-    Comment.belongsTo(models.story, {
-      onDelete: "cascade"
-    });
+    Comment.belongsTo(models.story);
   };
   Comment.associate = function(models) {
-    Comment.belongsTo(models.user, {
-      onDelete: "cascade"
-    });
+    Comment.belongsTo(models.user);
   };
   return Comment;
 };

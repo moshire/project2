@@ -12,16 +12,13 @@ module.exports = function(sequelize, Sequelize) {
   });
 
   //Foreign key creation
-  Rating.associate = function(models) {
-    Rating.belongsTo(models.user, {
-      onDelete: "cascade"
-    });
-  };
+  // Rating.associate = function(models) {
+  //   Rating.hasOne(models.user);
+  // };
 
-  Rating.associate = function(models) {
-    Rating.belongsTo(models.story, {
-      onDelete: "cascade"
-    });
-  };
+  // Rating.associate = function(models) {
+  //   Rating.belongsToMany(models.story);
+  // };
+
   return Rating;
 };
