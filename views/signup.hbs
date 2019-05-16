@@ -1,13 +1,44 @@
-<form id="signup" name="signup" method="post" action="/signup">
-    <label for="firstName">First Name</label>
-    <input name="firstName" type="text" />
-    <label for="lastName">Last Name</label>
-    <input name="lastName" type="text" />
-    <label for="username">Username</label>
-    <input class="text" name="username" type="username" />
-    <label for="email">Email Address</label>
-    <input class="text" name="email" type="email" />
-    <label for="password">Password</label>
-    <input name="password" type="password" />
-    <input class="btn btn-primary" type="submit" value="Sign Up" />
-</form>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6">
+            <h1 class="why-join">
+                Why join this community?
+            </h1>
+            <p>
+                In this fast-paced age of surface-level interactions, we are less likely to receive and pass down useful
+                knowledge from our families and
+                and cultures. In this community, you may genuinely connect with individuals from all walks of life,
+                backgrounds,
+                and age ranges who are willing to share wisdom and learn from people just like you. Your experiences and
+                wisdom are valuable. Make an impact by sharing these treasures with the wider world. You never know the
+                difference you can make!
+            </p>
+            <img class="d-block mx-auto img-fluid" src="https://pngimg.com/uploads/owl/owl_PNG10.png" alt="wise owl">
+        </div>
+        <div class="col-sm-6">
+            <form id="signup" name="signup" method="post" action="/signup">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input name="firstName" class="form-control" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input name="lastName" class="form-control" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input class="text form-control" name="username" type="username" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input class="text form-control" name="email" type="email" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input name="password" class="form-control" type="password" />
+                </div>
+                <input class="btn btn-outline-secondary" type="submit" value="Sign Up" />
+            </form>
+        </div>
+    </div>
+</div>
