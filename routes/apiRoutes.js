@@ -27,7 +27,7 @@ module.exports = function(app) {
   app.post("/api/new", function(req, res) {
     // Take the request...
     var story = req.body;
-
+    console.log(req.session.passport.user);
     var routeName = story.title.replace(/\s+/g, "").toLowerCase();
 
     // Then add the story to the database using sequelize
@@ -35,7 +35,8 @@ module.exports = function(app) {
       routeName: routeName,
 
       title: story.title,
-      story: story.story
+      story: story.story,
+      userId: req.session.passport.user
     });
 
     res.status(204).end();

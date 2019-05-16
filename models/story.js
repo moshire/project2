@@ -8,7 +8,9 @@ module.exports = function(sequelize, Sequelize) {
       // the story's title (a string)
       title: Sequelize.STRING,
       // the story's text (text)
-      story: Sequelize.TEXT
+      story: Sequelize.TEXT,
+      //the story's overall rating
+      overallRating: Sequelize.INTEGER
     },
     {
       // disable the modification of tablenames; By default, sequelize will automatically
@@ -19,8 +21,15 @@ module.exports = function(sequelize, Sequelize) {
   );
 
   Story.associate = function(models) {
-    Story.hasMany(models.rating);
+    Story.hasOne(models.rating);
   };
 
+  Story.associate = function(models) {
+    Story.hasOne(models.comment);
+  };
+
+  Story.associate = function(models) {
+    Story.belongsTo(models.user);
+  };
   return Story;
 };

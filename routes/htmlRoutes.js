@@ -21,6 +21,8 @@ module.exports = function(app, passport) {
 
   app.get("/logout", authController.logout);
 
+  app.get("/comment/:storyId?", isLoggedIn, authController.comment);
+
   app.post(
     "/signup",
     passport.authenticate("local-signup", {
