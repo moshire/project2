@@ -53,12 +53,17 @@ module.exports = function(sequelize, Sequelize) {
     }
   });
 
+
+
   User.associate = function(models) {
-    User.hasMany(models.rating);
+    User.hasOne(models.story);
+  };
+  User.associate = function(models) {
+    User.hasOne(models.comment);
   };
 
   User.associate = function(models) {
-    User.hasMany(models.story);
+    User.hasOne(models.rating);
   };
 
   return User;

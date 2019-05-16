@@ -28,20 +28,19 @@ $(document).ready(
   $(".select-story").on("click", function(event) {
     event.preventDefault();
 
-    var selectedStory = {
-      id: $(this).data("story-id"),
-      userId: $(this).data("user-id"),
-      overallRating: $(this).data("overall-rating"),
-      user: {
-        firstName: $(this).data("first-name"),
-        lastName: $(this).data("last-name"),
-        username: $(this).data("username")
-      },
-      story: $(this).data("story")
-    };
+    // var selectedStory = {
+    //   id: $(this).data("story-id"),
+    //   userId: $(this).data("user-id"),
+    //   overallRating: $(this).data("overall-rating"),
+    //   user: {
+    //     firstName: $(this).data("first-name"),
+    //     lastName: $(this).data("last-name"),
+    //     username: $(this).data("username")
+    //   },
+    //   story: $(this).data("story")
+    // };
 
-    $.get("/comment", selectedStory).then(function(data) {
-      console.log(data);
-    });
+    var storyId = $(this).data("story-id");
+    window.location.href = "/comment/" + storyId;
   })
 );

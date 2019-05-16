@@ -21,13 +21,15 @@ module.exports = function(sequelize, Sequelize) {
   );
 
   Story.associate = function(models) {
-    Story.hasMany(models.rating);
+    Story.hasOne(models.rating);
   };
 
   Story.associate = function(models) {
-    Story.belongsTo(models.user, {
-      onDelete: "cascade"
-    });
+    Story.hasOne(models.comment);
+  };
+
+  Story.associate = function(models) {
+    Story.belongsTo(models.user);
   };
   return Story;
 };
