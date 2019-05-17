@@ -51,5 +51,7 @@ module.exports = function(app) {
       storyNum: comment.storyId,
       userId: req.session.passport.user
     });
+
+    res.json(comment);
   });
 };

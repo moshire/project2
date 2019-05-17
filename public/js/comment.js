@@ -1,6 +1,7 @@
 var $jq = jQuery.noConflict();
 
-$jq("#commentBtn").on("click", function() {
+$jq("#commentBtn").on("click", function(event) {
+  event.preventDefault();
   var $formData = $("#commentForm").val();
   var $storyId = $(".select-story").attr("data-story-id");
   console.log($formData + " storyId = " + $storyId);
@@ -10,14 +11,10 @@ $jq("#commentBtn").on("click", function() {
     storyId: $storyId
   };
 
-  $jq
-    .post("/api/comment", newComment)
-    .then(function(data) {
-      console.log("Added " + data);
-      // window.location.href = "/comment/" + storyId;
-    })
-    .then(function() {
-      window.location.reload();
-      $formData.text("");
-    });
+  $jq.post("/api/comment", newComment, function(data) {
+    console.log("Added " + data);
+    console.log("Just finished Ajax request");
+    location.reload(true);
+    $formData.text("");
+  });
 });
