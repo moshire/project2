@@ -53,18 +53,16 @@ module.exports = function(sequelize, Sequelize) {
     }
   });
 
-
-
   User.associate = function(models) {
-    User.hasOne(models.story);
+    User.hasMany(models.story);
   };
   User.associate = function(models) {
-    User.hasOne(models.comment);
+    User.hasMany(models.comment);
   };
 
-  User.associate = function(models) {
-    User.hasOne(models.rating);
-  };
+  // User.associate = function(models) {
+  //   User.hasMany(models.rating);
+  // };
 
   return User;
 };

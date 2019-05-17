@@ -2,7 +2,9 @@
 // Effectively it takes the form inputs then sends it to the server to save in the DB.
 
 // when user clicks add-btn
-$("#add-btn").on("click", function(event) {
+
+var $jq = jQuery.noConflict();
+$jq("#add-btn").on("click", function(event) {
   event.preventDefault();
 
   // make a newStory obj
@@ -11,17 +13,18 @@ $("#add-btn").on("click", function(event) {
     routeName: "n/a",
 
     // role from title input
-    title: $("#title")
+    title: $jq("#title")
       .val()
       .trim(),
     // age from summary  input
-    story: $("#story")
+    story: $jq("#story")
       .val()
       .trim()
   };
-
+  console.log(newStory);
   // send an AJAX POST-request with jQuery
-  $.post("/api/new", newStory)
+  $jq
+    .post("/api/new", newStory)
     // on success, run this callback
     .then(function(data) {
       // log the data we found

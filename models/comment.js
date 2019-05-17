@@ -7,16 +7,17 @@ module.exports = function(sequelize, Sequelize) {
     },
 
     comment: {
-      type: Sequelize.INTEGER
+      type: Sequelize.TEXT
     }
   });
 
   //Foreign key creation
-  Comment.associate = function(models) {
-    Comment.belongsTo(models.story);
-  };
+
   Comment.associate = function(models) {
     Comment.belongsTo(models.user);
+  };
+  Comment.associate = function(models) {
+    Comment.belongsTo(models.story);
   };
   return Comment;
 };
