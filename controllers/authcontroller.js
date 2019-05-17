@@ -1,6 +1,7 @@
 var models = require("../models/");
 var Story = models.story;
 var Users = models.user;
+var Comment = models.comment;
 
 var exports = (module.exports = {});
 
@@ -22,8 +23,23 @@ exports.comment = function(req, res) {
     var hbsObject = {
       story: data
     };
-    console.log(data);
-    res.render("comment", hbsObject);
+
+    Comment.findAll({
+      where: {
+        storyNum: storyId
+      },
+      include: [
+        {
+          model: Users,
+          required: true
+        }
+      ]
+    }).then(function(commentData) {
+      hbsObject.comment = commentData;
+
+      console.log(hbsObject);
+      res.render("comment", hbsObject);
+    });
   });
 };
 

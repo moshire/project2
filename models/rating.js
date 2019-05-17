@@ -13,12 +13,19 @@ module.exports = function(sequelize, Sequelize) {
 
   //Foreign key creation
   // Rating.associate = function(models) {
-  //   Rating.hasOne(models.user);
+  //   Rating.belongsTo(models.user);
   // };
 
   // Rating.associate = function(models) {
-  //   Rating.belongsToMany(models.story);
+  //   Rating.belongsTo(models.story);
   // };
 
+
+  // Comment.associate = function(models) {
+  //   Comment.belongsTo(models.user);
+  // };
+  // Comment.associate = function(models) {
+  //   Comment.belongsTo(models.story);
+  // };
   return Rating;
 };

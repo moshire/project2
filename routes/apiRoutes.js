@@ -1,5 +1,6 @@
 var models = require("../models/");
 var Story = models.story;
+var Comment = models.comment;
 
 // Routes
 // =============================================================
@@ -40,5 +41,15 @@ module.exports = function(app) {
     });
 
     res.status(204).end();
+  });
+
+  app.post("/api/comment", function(req, res) {
+    var comment = req.body;
+
+    Comment.create({
+      comment: comment.comment,
+      storyNum: comment.storyId,
+      userId: req.session.passport.user
+    });
   });
 };

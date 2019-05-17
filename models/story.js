@@ -21,11 +21,11 @@ module.exports = function(sequelize, Sequelize) {
   );
 
   Story.associate = function(models) {
-    Story.hasOne(models.rating);
+    Story.hasMany(models.rating);
   };
 
   Story.associate = function(models) {
-    Story.hasOne(models.comment);
+    Story.hasMany(models.comment);
   };
 
   Story.associate = function(models) {
