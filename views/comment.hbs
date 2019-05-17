@@ -6,7 +6,7 @@
 </div>
 
 <form>
-  <fieldset class="form-group">
+  {{!-- <fieldset class="form-group">
     <div class="row">
       <legend class="col-form-label col-sm-2 pt-0">{{isRated}}</legend>
       <div class="col-sm-10">
@@ -42,15 +42,15 @@
         </div>
       </div>
     </div>
-  </fieldset>
+  </fieldset> --}}
   <div class="form-group">
-    <label for="exampleFormControlTextarea1">Comments:</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <label for="commentForm">Comments:</label>
+    <textarea class="form-control" id="commentForm" rows="3"></textarea>
   </div>
-  <button type="button" class="btn btn-primary">Submit</button>
+  <button type="button" class="btn btn-primary" id="commentBtn">Submit</button>
 </form>
 
 </div>
 
- <script type="text/javascript" src="js/comment.js" ></script>
+ <script type="text/javascript" src="../js/comment.js" ></script>
  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
