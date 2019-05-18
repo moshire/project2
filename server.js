@@ -9,7 +9,6 @@ var passport = require("passport");
 var session = require("express-session");
 var bodyParser = require("body-parser");
 var env = require("dotenv").load();
-var models = require("./models");
 var PORT = process.env.PORT || 3000;
 
 // Middleware
@@ -31,7 +30,7 @@ require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app, passport);
 require("./routes/auth.js")(app, passport);
 // Passport strategies
-require("./config/passport/passport.js")(passport, models.user);
+require("./config/passport/passport.js")(passport, db.user);
 
 app.set("views", "./views");
 app.engine(
