@@ -42,5 +42,9 @@ $(document).ready(
 
     var storyId = $(this).data("story-id");
     window.location.href = "/comment/" + storyId;
+  }),
+  // Log out user when clicking logout button
+  $(".logoutButton").on("click", function(event) {
+    window.location.href = "/logout";
   })
 );

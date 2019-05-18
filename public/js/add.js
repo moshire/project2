@@ -38,3 +38,8 @@ $jq("#add-btn").on("click", function(event) {
   $("#title").val("");
   $("#story").val("");
 });
+
+// Log out user when clicking logout button
+$jq(".logoutButton").on("click", function(event) {
+  window.location.href = "/logout";
+});
