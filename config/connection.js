@@ -1,8 +1,6 @@
-// *********************************************************************************
-// CONNECTION.JS - THIS FILE INITIATES THE CONNECTION TO MYSQL
-// *********************************************************************************
+// //CONNECTION.JS - THIS FILE INITIATES THE CONNECTION TO MYSQL
 
-// Dependencies
+// //Dependencies
 // var Sequelize = require("sequelize");
 // var mysql = require("mysql");
 // var connection;
