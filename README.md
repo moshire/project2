@@ -30,14 +30,15 @@
 ## How It Works
 
 
-*First signin/signup
-*Then choose if you wanna Add  a Story or View All The Stories
-*Then Comment and Rate The stories
+* First signin/signup
+* Then choose if you wanna Add  a Story or View All The Stories
+* Then Comment and Rate The stories
 
 
 
 
 ## take a look our live Demo here
+[LIVE DEMO](https://storythread.herokuapp.com/)
 
 
 ## Contributing Guidelines
